@@ -1,0 +1,157 @@
+html, body {
+  height: 100%;
+  overflow: auto;
+  overflow-y: auto; 
+
+}
+
+.home {
+  position: relative;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+background-color: rgb(0, 0, 0);
+    h1 {
+      color: var(--selected-theme-main-color);
+      margin: 0;
+      font-weight: 400;
+      font-size: 8rem;
+      line-height: 10rem;
+      position: relative;
+      overflow: hidden;
+      font-family: "Inconsolata", Consolas, monospace;
+      animation: typing 2.5s steps(30, end), blink-caret 0.5s step-end infinite;
+      white-space: nowrap;
+    }
+   
+  }
+
+  .contact-me{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+    &__buttons-wrapper{
+      display: flex;
+      gap: 10px;
+      button, a {
+        cursor: pointer;
+        padding: 10px 70px;
+        font-size: 2rem;
+        background: transparent;
+        color: var(--selected-theme-main-color);
+        border: 1.5px solid var(--selected-theme-main-color);
+        border-radius: 4px;
+        font-weight: 500;
+        &:hover {
+          color: #f8f7f7;
+          background: var(--selected-theme-main-color);
+          font-weight: 500;
+        }
+      }
+
+      a{
+        padding: 10px 30px;
+        text-decoration: none;
+      }
+    }
+    &__socials-wrapper{
+      display: flex;
+      gap: 10px;
+      svg{
+        color: var(--selected-theme-main-color);
+        cursor: pointer;
+      }
+    }
+  }
+
+
+@media only screen and (max-width: 550px) {
+  .home__text-wrapper > h1 {
+    font-size: 3rem;
+    line-height: 5rem;
+  }
+  .contact-me{
+    flex-direction: column;
+    &__buttons-wrapper{
+      flex-direction: column;
+    }
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 768px) {
+  .home__text-wrapper > h1 {
+    font-size: 4rem;
+    line-height: 6rem;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 990px) {
+  .home__text-wrapper > h1 {
+    font-size: 6rem;
+    line-height: 8rem;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(247, 246, 244);
+  }
+}
+
+
+
+.butterfly {
+  position: absolute;
+  width: 50px; 
+  height: 50px; 
+  background-image: url('../../images/butterfly.gif'); 
+  background-size: cover;
+  animation: butterfly 5s linear infinite; 
+}
+
+@keyframes butterfly {
+  0%, 100% {
+    transform: translateY(0); 
+  }
+  25%, 75% {
+    transform: translateY(calc(100vh - 50px)); 
+  }
+}
+
+.fly {
+  position: absolute;
+  width: 50px; 
+  height: 50px; 
+  background-image: url('../../images/fly.gif'); 
+  background-size: cover;
+  animation: fly 4s linear infinite; 
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(100vw); 
+  }
+  50% {
+    transform: translateX(-50px); 
+  }
+  100% {
+    transform: translateX(100vw); 
+  }
+}
